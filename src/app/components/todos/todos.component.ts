@@ -17,4 +17,10 @@ export class TodosComponent implements OnInit {
     });
   }
 
+  deleteTodo(todo:Todo) {
+    console.log('[matt][tealium] todo', todo)
+    this.todos = this.todos.filter( t => t.id !== todo.id);
+    this.todoService.deleteTodo(todo).subscribe()
+  }
+
 }
